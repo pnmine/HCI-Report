@@ -2607,6 +2607,7 @@
 \def\partname{Part}
 \def\appendixname{Appendix}
 \def\abstractname{Abstract}
+\def\thaiabstractname{\thaifont บทคัดย่อ}
 % IEEE specific names
 \def\IEEEkeywordsname{Index Terms}
 \def\IEEEproofname{Proof}
@@ -6077,6 +6078,16 @@ between column types.}%
 \vskip 4\baselineskip plus 1fil minus 0\baselineskip%
 \parskip=0pt\par%
 \noindent\textbf{#1\ }\@IEEEgobbleleadPARNLSP}{\relax\par\normalfont}
+
+\newenvironment{thaiabstract}{%
+\if@twocolumn
+    \@IEEEabskeysecsize\bfseries\textit{\thaiabstractname}---\relax
+  \else
+    \bgroup\par\addvspace{0.5\baselineskip}\centering\vspace{-1.78ex}\@IEEEabskeysecsize\textbf{\abstractname}\par\addvspace{0.5\baselineskip}\egroup\quotation\@IEEEabskeysecsize
+  \fi\@IEEEgobbleleadPARNLSP}%
+
+
+
 
 
 % provide the user with some old font commands
